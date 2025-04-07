@@ -29,6 +29,26 @@ public class Desafio {
         while (opcao != 4) {
             System.out.println(menu);
             opcao = scanner.nextInt();
+
+            if(opcao == 1){
+                System.out.println("O saldo é: " + saldo);
+            } else if (opcao == 2) {
+                System.out.println("Digite o valor a ser transferido: ");
+                double valor = scanner.nextDouble();
+                if (valor > saldo) {
+                    System.out.println("Saldo insuficiente!");
+                } else {
+                    saldo -= valor;
+                    System.out.println("Novo saldo: " + saldo);
+                }
+            } else if (opcao == 3) {
+                System.out.println("Valor recebido: ");
+                double valor = scanner.nextDouble();
+                saldo += valor;
+                System.out.println("Novo saldo: " + saldo);
+            } else if (opcao != 4) {
+                System.out.println("Opção inválida!");
+            }
         }
     }
 }
